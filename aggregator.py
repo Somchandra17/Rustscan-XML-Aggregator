@@ -4,7 +4,7 @@ import xml.etree.ElementTree as ET
 
 def run_rustscan(domain, results_dir):
     # Rustscan command you can add more nmap commands if you want!
-    command = f"rustscan -b 65000 --ulimit 70000 -a {domain} --range 0-65535 -- -Pn -oX {results_dir}/{domain}.xml"
+    command = f"rustscan -b 35000 --ulimit 70000 -a {domain} --range 0-65535 -- -Pn -oX {results_dir}/{domain}.xml"
     print(f"Running: {command}")
     subprocess.run(command, shell=True, check=True)
 
