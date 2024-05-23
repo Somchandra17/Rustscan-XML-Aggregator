@@ -15,9 +15,9 @@ Before running the script, ensure you have the following installed on your syste
 1. Clone this repository to your local machine:
 
 ```sh
-git clone https://github.com/yourusername/rustscan-xml-aggregator.git
-cd rustscan-xml-aggregator
+git clone https://github.com/Somchandra17/Rustscan-XML-Aggregator.git
 ```
+
 2. Ensure Rustscan is installed and accessible from the command line. You can install Rustscan using:
 
 ```sh
