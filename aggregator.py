@@ -3,7 +3,7 @@ import subprocess
 import xml.etree.ElementTree as ET
 
 def run_rustscan(domain, results_dir):
-    # Construct the Rustscan command
+    # Rustscan command you can add more nmap commands if you want!
     command = f"rustscan -b 65000 --ulimit 70000 -a {domain} --range 0-65535 -- -Pn -oX {results_dir}/{domain}.xml"
     print(f"Running: {command}")
     subprocess.run(command, shell=True, check=True)
@@ -18,12 +18,10 @@ def add_domain_to_xml(file_path, domain):
         if hostnames_element is None:
             hostnames_element = ET.SubElement(host_element, 'hostnames')
         
-        # Remove existing PTR entries if you want to replace them
         for hostname in hostnames_element.findall('hostname'):
             if hostname.get('type') == 'PTR':
                 hostnames_element.remove(hostname)
         
-        # Add the user-defined domain name
         hostname_element = ET.SubElement(hostnames_element, 'hostname')
         hostname_element.set('name', domain)
         hostname_element.set('type', 'user-defined')
@@ -71,6 +69,12 @@ def main():
     
     merge_xml(xml_files, 'aggregated_results.xml')
     print("Merged XML saved as aggregated_results.xml")
+
+    # Convert aggregated XML to HTML
+    xslt_command = "xsltproc -o report.html nmap-bootstrap.xsl aggregated_results.xml"
+    print(f"Running: {xslt_command}")
+    subprocess.run(xslt_command, shell=True, check=True)
+    print("HTML report saved as report.html")
 
 if __name__ == "__main__":
     main()
