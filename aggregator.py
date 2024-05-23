@@ -70,7 +70,6 @@ def main():
     merge_xml(xml_files, 'aggregated_results.xml')
     print("Merged XML saved as aggregated_results.xml")
 
-    # Convert aggregated XML to HTML
     xslt_command = "xsltproc -o report.html nmap-bootstrap.xsl aggregated_results.xml"
     print(f"Running: {xslt_command}")
     subprocess.run(xslt_command, shell=True, check=True)
