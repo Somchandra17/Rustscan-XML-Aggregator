@@ -42,7 +42,7 @@ anotherdomain.com
 2. Run the python script: 
 
 ```sh
-python run_rustscan_and_merge.py
+python aggregator.py
 ```
 
 3. When prompted, enter the path to your subdomains file:
@@ -59,3 +59,7 @@ The script will:
     > Add the domain name to each resulting XML file.
     > Merge all the XML files into a single file named aggregated_results.xml.
     > Convert the aggregated XML to an HTML report named report.html.
+
+### nmap-bootstrap-xsl
+This was used from [l4rm4nd](https://github.com/l4rm4nd).
+Check the repositry [nmap-bootstrap-xsl](https://github.com/Haxxnet/nmap-bootstrap-xsl)
