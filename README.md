@@ -1,7 +1,7 @@
 # Rustscan XML Aggregator
 
 This repository contains a Python script that automates the process of running Rustscan on a list of subdomains, storing the results in XML format, and merging the individual XML files into a single aggregated XML file. The script also converts the aggregated XML to an HTML report for easier analysis.
-** Provides you result with subdomains along with their IPs in a single file. **
+**Provides you result with subdomains along with their IPs in a single file.**
 
 ## Prerequisites
 
